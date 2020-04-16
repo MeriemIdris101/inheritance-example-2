@@ -57,7 +57,7 @@ size_t Warrior::Attack() const {
  */
 size_t Warrior::Defend(size_t attack) {
 	if (_shield > 0){
-		if (_shield < attack){
+		if (_shield > attack){
 			_shield -= attack;
 			return _hitPoints;
 		}else{
@@ -66,7 +66,7 @@ size_t Warrior::Defend(size_t attack) {
 			_hitPoints -= attack;
 			return _hitPoints;
 		}
-	}else if (_hitPoints <= attack){
+	}else if (_hitPoints >= attack){
 		_hitPoints -= attack;
 		return _hitPoints;
 	} else{
@@ -81,7 +81,7 @@ size_t Warrior::Defend(size_t attack) {
  * @return true if the warrior still has hit points, false otherwise.
  */
 bool Warrior::IsAlive() const {
-	return _hitPoints == 0;
+	return _hitPoints != 0;
 }
 /**
  * To String
@@ -91,8 +91,7 @@ bool Warrior::IsAlive() const {
  */
 string Warrior::ToString() const {
 	stringstream ss;
-	ss << "Name: " << GetName() << " Hit Points: " << _hitPoints
-		<< ", Shield: " << _shield << ", Attack:" <<
-	_attackDamage;
+	ss << "Name: " << GetName() << ", Hit Points: " << _hitPoints
+		<< ", Shield: " << _shield << ", Attack: " << _attackDamage;
 	return ss.str();
 }
