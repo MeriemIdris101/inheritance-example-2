@@ -1,7 +1,9 @@
-//
-// Created by Arias Arevalo, Carlos on 4/15/20.
-//
-
+/*
+ * Title:		Person Class Declaration
+ * Purpose:		A Class to represent a simple person
+ * Author:		Carlos Arias
+ * Date:		April 16, 2020
+ */
 #ifndef PERSON_H
 #define PERSON_H
 
