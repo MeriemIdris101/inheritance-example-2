@@ -5,9 +5,17 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 
+#include "person.h"
+#include "date.h"
 
-class Employee {
+#include <string>
+#include <iostream>
+using std::string;
 
+
+class Employee : public Person{
+	Date _hireDate;
+	
 };
 
 
