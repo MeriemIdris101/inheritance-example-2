@@ -3,4 +3,4 @@ project(inheritance_example_2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(inheritance_example_2 main.cpp)
+add_executable(inheritance_example_2 person.cpp person.h employee.cpp employee.h boss.cpp boss.h date.cpp date.h datetest.cpp)
