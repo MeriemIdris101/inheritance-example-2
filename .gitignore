@@ -34,3 +34,7 @@
 # CLion
 /.idea
 /cmake-build-debug
+
+# Project Specific
+test
+inheritance
