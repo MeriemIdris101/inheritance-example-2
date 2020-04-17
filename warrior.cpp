@@ -18,6 +18,11 @@
 
 using std::string;
 using std::stringstream;
+
+#include <iostream>
+using std::cerr;
+using std::endl;
+
 /**
  * Warrior Constructor
  * This method initializes all data members of the class, and it's parent class. By default
@@ -42,9 +47,9 @@ Warrior::Warrior(const string &name, const Date &birthday, size_t attackDamage, 
  * @return the amount of attack calculated
  */
 size_t Warrior::Attack() const {
-	srand(time(NULL));
 	int die = rand() % 6 + 1;
-	return static_cast<size_t>(_attackDamage * die / 6.0);
+	size_t attack = static_cast<size_t>(_attackDamage * die / 6.0);
+	return attack;
 }
 /**
  * Defense of a Warrior
