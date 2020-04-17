@@ -23,7 +23,7 @@ using std::stringstream ;
  * @param salary salary of the employee
  */
 Employee::Employee(const string &name, const Date &birthDay, double salary)
-	: Person(name, birthDay), _salary(salary), _hireDate(Date::Now()){
+	: Person(name, birthDay), _hireDate(Date::Now()), _salary(salary){
 
 }
 /**
@@ -35,7 +35,7 @@ Employee::Employee(const string &name, const Date &birthDay, double salary)
  * @param hireDate date that the employee was hired
  */
 Employee::Employee(const string &name, const Date &birthDay, double salary, const Date &hireDate)
-		: Person(name, birthDay), _salary(salary), _hireDate(hireDate) {
+		: Person(name, birthDay), _hireDate(hireDate), _salary(salary) {
 
 }
 /**
