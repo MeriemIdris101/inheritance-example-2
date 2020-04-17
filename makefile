@@ -21,29 +21,35 @@ employee.o:	employee.cpp employee.h person.h date.h
 warrior.o:	warrior.cpp warrior.h person.h date.h
 	g++ -c warrior.cpp $(CFLAGS)
 
-date-test.o:	datetest.cpp date.h
+datetest.o:	datetest.cpp date.h
 	g++ -c datetest.cpp $(CFLAGS)
 
-person-test.o:	persontest.cpp person.h date.h
+persontest.o:	persontest.cpp person.h date.h
 	g++ -c persontest.cpp $(CFLAGS)
 
-employee-test.o:	employeetest.cpp date.h person.h employee.h
+employeetest.o:	employeetest.cpp date.h person.h employee.h
 	g++ -c employeetest.cpp $(CFLAGS)
 
-warrior-test.o:	warriortest.cpp date.h person.h warrior.h
+warriortest.o:	warriortest.cpp date.h person.h warrior.h
 	g++ -c warriortest.cpp $(CFLAGS)
 
-date-test:	date-test.o date.o
-	g++ date-test.o date.o -o test $(CFLAGS)
+date-test:	datetest.o date.o
+	g++ datetest.o date.o -o test $(CFLAGS)
+	./test
 
-person-test:	person-test.o date.o person.o
-	g++ person-test.o date.o person.o -o test $(CFLAGS)
+person-test:	persontest.o date.o person.o
+	g++ persontest.o date.o person.o -o test $(CFLAGS)
+	./test
 
-employee-test: employee-test.o date.o person.o employee.o
-	g++ employee-test.o date.o person.o employee.o -o test $(CFLAGS)
+employee-test: employeetest.o date.o person.o employee.o
+	g++ employeetest.o date.o person.o employee.o -o test $(CFLAGS)
+	./test
 
-warrior-test: warrior-test.o date.o person.o warrior.o
-	g++ warrior-test.o date.o person.o warior.o -o test $(CFLAGS)
+warrior-test: warriortest.o date.o person.o warrior.o
+	g++ warriortest.o date.o person.o warrior.o -o test $(CFLAGS)
+	./test
+
+test:	date-test person-test employee-test warrior-test
 
 clean:
 	rm -f *.o inheritance test
