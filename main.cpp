@@ -20,9 +20,13 @@ int main() {
 	list.push_back(Person());
 	list.push_back(Person("John"));
 	list.push_back(Person("Peter", 2000, 01, 01));
+	list.push_back(Employee("Manny", Date(1995, 02, 22), 3000));
 
 	for (Person p : list)
 		cout << p.ToString() << endl;
+
+	for (size_t i = 0; i < list.size(); i++)
+		cout << list[i].ToString() << endl;
 
 	return 0;
 }
