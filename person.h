@@ -20,7 +20,7 @@ public:
 	Person(const string& name);
 	Person(const string& name, const Date& birthDay);
 	Person(const string& name, size_t year, size_t month, size_t day);
-	string ToString()const;
+	virtual string ToString()const;
 	string GetName()const;
 	Date GetBirthDay()const;
 	size_t GetAge()const;

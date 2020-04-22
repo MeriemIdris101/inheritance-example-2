@@ -26,7 +26,7 @@ public:
 	double GetSalary()const;
 	void Raise(double percentage);
 
-	string ToString()const;
+	virtual string ToString()const;
 };
 
 
