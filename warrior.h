@@ -26,7 +26,7 @@ public:
 	size_t Attack()const;
 	size_t Defend(size_t attack);
 	bool IsAlive()const;
-	string ToString()const;
+	virtual string ToString()const;
 };
 
 
